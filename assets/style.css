@@ -29,6 +29,9 @@ h1 {
 progress {
   margin-right: 0.5rem;
 }
+legend {
+  margin-top: 5px;
+}
 
 
 
