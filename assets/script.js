@@ -30,81 +30,61 @@ var commandes = {
   "<p>Mes réseaux-sociaux : <a target='_blank' href='https://www.linkedin.com/in/virgile-men'>LinkedIn</a>, <a target='_blank' href='https://www.behance.net/virgile-men'>Behance</a>, <a target='_blank' href='https://medium.com/@virgile.men'>Medium</a><br>Mes pages contributives : <a target='_blank' href='https://github.com/virgiIe'>Github</a>, <a target='_blank' href='https://codepen.io/virgile-dm'>Codepen</a><br>---<br>Vous pouvez aussi me contacter par ce <a href='virgile.dm/contact'>formulaire</a> 📮!</p>",
 };
 
-// déclarations de la variable saisie (l'intérieur du input) et de keyCode (le code de la derniere touche cliqué)
+// déclarations de la variable saisie (l'intérieur de l'input) et de keyCode (le code de la derniere touche cliqué)
 var saisie = String, keyCode = Number;
 
 $(document).ready(function() {
+// PARTIE TERMINAL
 
+  // assurer que les caractères dans l'input sont en minuscule --> S2 TP1 / Formulaire
+  $("input").on("keyup",function(){
+    var inputLower = $("input").val();
+    inputLower = inputLower.toLowerCase();
+    $("input").val(inputLower);
+  });
 
-  // activation de l'input si le keycode est celui d'entrée
+  // activation de la commande insérée dans l'input si le keycode est celui de la touche entrée
   $("#insertCommande").on("keydown", function (e){
     keyCode = e.keyCode || e.which;
     saisie = $("#insertCommande").val();
-    // console.log('1 '+saisie);
 
     if (keyCode === 13) {
       if (saisie = commandes[saisie]) {
         var bon = $("#insertCommande").val();
         $(`<div class="terminal-commande"><span class="success">virgile.men</span><span class="directory">~</span><span class="user-input" id="userInput"></span><span class="code">`+bon+`</div></span><div class="terminal-line">`+saisie+`</div>`).insertBefore(".terminal-insert");
-
       } else {
         var erreur = $("#insertCommande").val();
         $(`<div class="terminal-commande"><span class="success">virgile.men</span><span class="directory">~</span><span class="user-input" id="userInput"></span><span class="code">`+erreur+`</div></span></div><div class="terminal-line"><p>aucune commande associée à <span class="code">`+erreur+`</span></p></div>`).insertBefore(".terminal-insert");
       }
+      $("#insertCommande").val(""); // réinialisation de l'intérieur de l'input
     }
   });
 
-  // A FAIRE : que l'input se réinialise a 0 quand la commande est entrée
 
 
+// PARTIE KEYBOARD
 
-
-  // A FAIRE : .upLower le input
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Partie keyboard
-
+  // Animation de la touche du clavier enfoncée
   $('body').keydown(function(e) {
-    var $this, code, end, start, value;
-    code = e.keyCode || e.which;
-    // console.log(code);
-    if (code === 13 || code === 16 || code === 18 || code === 91 || code === 93) {
-      $('#kc-' + code + 'R').addClass('active');
-      $('#kc-' + code + 'L').addClass('active');
+    keyCode = e.keyCode || e.which;
+
+    if (keyCode === 13 || keyCode === 16 || keyCode === 18 || keyCode === 91 || keyCode === 93) {
+      $('#kc-' + keyCode + 'R').addClass('active');
+      $('#kc-' + keyCode + 'L').addClass('active');
     } else {
-      $('#kc-' + code).addClass('active');
-    }
-    // spaces on tab
-    if (code === 9) {
-      start = this.selectionStart;
-      end = this.selectionEnd;
-      $this = $(this);
-      value = $this.val();
-      $this.val(value.substring(0, start) + "  " + value.substring(end));
-      this.selectionStart = this.selectionEnd = start + 2;
-      return e.preventDefault();
+      $('#kc-' + keyCode).addClass('active');
     }
   });
 
+  // Animation de la touche du clavier relevée
   $('body').keyup(function(e) {
-    var code;
-    code = e.keyCode || e.which;
-    if (code === 13 || code === 16 || code === 18 || code === 91 || code === 93) {
-      $('#kc-' + code + 'R').removeClass('active');
-      return $('#kc-' + code + 'L').removeClass('active');
+    keyCode = e.keyCode || e.which;
+
+    if (keyCode === 13 || keyCode === 16 || keyCode === 18 || keyCode === 91 || keyCode === 93) {
+      $('#kc-' + keyCode + 'R').removeClass('active');
+      return $('#kc-' + keyCode + 'L').removeClass('active');
     } else {
-      return $('#kc-' + code).removeClass('active');
+      return $('#kc-' + keyCode).removeClass('active');
     }
   });
   
