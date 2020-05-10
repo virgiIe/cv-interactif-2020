@@ -67,6 +67,7 @@
   }
   .terminal-insert {
     padding: 0 .5em;
+    display: flex;
   }
   form > .terminal-insert{
     padding: 0;
@@ -75,6 +76,7 @@
     color: #00be44;
   }
   .repertoire {
+    color: #316af5;
     font-weight: 500;
     margin: 0 0.5em;
   }
