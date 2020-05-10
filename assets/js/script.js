@@ -36,11 +36,17 @@ var saisie = String, keyCode = Number;
 $(document).ready(function() {
 // PARTIE TERMINAL
 
+  // assurer que le focus est bien sur l'input
+  // --> supprimer parce que pas possibilité de surligner le texte
+  /* $("body").on("click",function(){
+    $("#insertCommande").focus();
+  }); */
+
   // assurer que les caractères dans l'input sont en minuscule --> S2 TP1 / Formulaire
-  $("input").on("keyup",function(){
-    var inputLower = $("input").val();
+  $("#insertCommande").on("keyup",function(){
+    var inputLower = $("#insertCommande").val();
     inputLower = inputLower.toLowerCase();
-    $("input").val(inputLower);
+    $("#insertCommande").val(inputLower);
   });
 
   // activation de la commande insérée dans l'input si le keycode est celui de la touche entrée
@@ -51,14 +57,23 @@ $(document).ready(function() {
     if (keyCode === 13) {
       if (saisie = commandes[saisie]) {
         var bon = $("#insertCommande").val();
-        $(`<div class="terminal-commande"><span class="success">virgile.men</span><span class="directory">~</span><span class="user-input" id="userInput"></span><span class="code">`+bon+`</div></span><div class="terminal-line">`+saisie+`</div>`).insertBefore(".terminal-insert");
+        $(".terminal-fenetre").append(`<div class="terminal-commande"><span class="profil">virgile.men</span><span class="repertoire">~</span><span class="user-input" id="userInput"></span><span class="code">`+bon+`</div></span><div class="terminal-line">`+saisie+`</div>`);
+
       } else {
         var erreur = $("#insertCommande").val();
-        $(`<div class="terminal-commande"><span class="success">virgile.men</span><span class="directory">~</span><span class="user-input" id="userInput"></span><span class="code">`+erreur+`</div></span></div><div class="terminal-line"><p>aucune commande associée à <span class="code">`+erreur+`</span></p></div>`).insertBefore(".terminal-insert");
+        $(".terminal-fenetre").append(`<div class="terminal-commande"><span class="profil">virgile.men</span><span class="repertoire">~</span><span class="user-input" id="userInput"></span><span class="code">`+erreur+`</div></span></div><div class="terminal-line"><p>aucune commande associée à <span class="code">`+erreur+`</span></p></div>`);
       }
       $("#insertCommande").val(""); // réinialisation de l'intérieur de l'input
+      // ajouter un autoScroll smooth de la div .terminal-fenetre
     }
   });
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,148 @@
+/*GENERALITES*/
+html, body {
+  /* dimensions */
+  height: 100vh;
+  margin: 0;
+  /* background */
+  background: linear-gradient(-45deg, #f14611, #c92d69, #0a79a1, #18886e);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+  /* caractères */
+  color: rgb(255, 255, 255);
+  font-family: 'Roboto Mono', monospace;
+}
+/* SCROLL */
+body { /* pas de scroll du body (puisque le scroll est nécessaire que pour nav et main */
+  overflow: hidden;
+}
+/* Cacher la barre de défilement pour Chrome, Safari et Opera */
+body::-webkit-scrollbar {
+ display: none;
+}
+.container {
+  /* dimensions */
+  height: 100vh;
+  /* flex */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+h1 {
+  /* dimensions */
+  margin: 0;
+  /* caractères */
+  font-weight: 500;
+  font-size: 1.2em;
+}
+p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  line-height: 140%;
+}
+input {
+  width: 55%;
+  border: none;
+  background: none;
+  /* caractères */
+  color: white;
+  font-size: 1em;
+  font-family: 'Roboto Mono', monospace;
+}
+a {
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+progress {
+  margin-right: 0.5em;
+}
+legend {
+  margin-top: 5px;
+}
+.formulaire {
+  height: 100%;
+}
+form{
+  position: relative;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+textarea {
+  /* dimensions */
+  border: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  resize: none;
+  box-shadow: none;
+  /* caractères */
+  color: white;
+  font-size: 1rem;
+  /* background */
+  background-color: rgba(255, 255, 255, 0.2);
+  /* bordures */
+  border: 1px solid none;
+  border-radius: 5px;
+}
+button {
+  position: relative;
+  align-self: center;
+  cursor: pointer;
+  background: none;
+  color: #00be44;
+  padding: 0;
+  font-size: 1em;
+  border: 0;
+  margin: 5px;
+  text-decoration-line: underline;
+}
+
+
+
+
+/* @KEYFRAMES */
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+	}
+}
+
+/* largeur supérieur à 1000px */
+@media screen and (min-width: 1000px) {
+  .partie-terminal {
+      width: 800px !important;
+  }
+}
+/* largeur inférieur à 740px */
+@media screen and (max-width: 740px) {
+  .partie-terminal {
+      height: 70vh !important;
+  }
+  .partie-keyboard {
+    visibility: hidden;
+    height: 0;
+    width: 0 !important;
+  }
+}
+/* hauteur inférieur à 600px */
+@media screen and (max-height: 600px) {
+  .partie-terminal {
+      height: 80vh !important;
+  }
+  .partie-keyboard {
+    visibility: hidden;
+    height: 0;
+    width: 0 !important;
+  }
+}
