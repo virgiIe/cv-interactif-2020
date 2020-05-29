@@ -1,94 +1,118 @@
 .partie-terminal {
-    /* dimensions */
-    height: 50vh;
-    width: 90%;
-    /* background */
-    background-color: rgba(0, 0, 0, 0.2);
-    /* bordures */
-    border: 1px solid none;
-    border-radius: 5px;
-    /* ombres */
-    box-shadow: 0px 3px 15px rgb(255, 255, 255); /* A REVOIR */
-    /* flex */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-  /* barre de la fenêtre */
-  .terminal-barre {
-    /* positionnement relative pour les boutons */
-    position: relative;
-    /* dimensions */
-    border-radius: 5px 5px 0 0;
-    /* background */
-    background-image: linear-gradient(180deg, #46424876 0%, #3b383d6f 100%);
-    background-color: rgba(255, 255, 255, 0.3);
-    /* flex */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  /* span des boutons MacOS */
-  .boutons {
-    /* positionnement */
-    position: absolute;
-    left: 0;
-    /* dimensions */
-    width: 61px;
-    margin-left: 7px;
-    /* flex */
-    display: inline-flex;
-    justify-content: space-between;
-  }
-  /* boutons MacOS*/
-  .rond {
-    /* dimensions */
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-  }
-  .fermer {
-    background-color: #ff5952;
-  }
-  .reduire {
-    background-color: #e6c02a;
-  }
-  .agrandir {
-    background-color: #54c12c;
-  }
-  
-  /* paramètrages de l'interieur du terminal */
-  .terminal-fenetre {
-    /* dimmensions */
-    padding: 0 .5em;
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-  }
-  .terminal-insert {
-    padding: 0 .5em;
-    display: flex;
-  }
-  form > .terminal-insert{
-    padding: 0;
-  }
-  .profil {
-    color: #00be44;
-  }
-  .repertoire {
-    color: #316af5;
-    font-weight: 500;
-    margin: 0 0.5em;
-  }
-  .code {
-    color: rgb(255, 255, 255);
-  }
-  .formations-align {
-    padding-left: 8.375em;
-  }
-  .diplomes-align {
-    padding-left: 4.1875em;
-  }
-  
-  
-  
+  /* dimensions */
+  height: 50vh;
+  width: 90%;
+  /* background */
+  background-color: rgba(0, 0, 0, 0.2);
+  /* bordures */
+  border: 1px solid none;
+  border-radius: 5px;
+  /* ombres */
+  /* box-shadow: 0 3px 15px rgb(255, 255, 255); A REVOIR */
+  -webkit-box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.3);
+  /* flex */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+/* barre de la fenêtre */
+.terminal-barre {
+  /* positionnement relative pour les boutons */
+  position: relative;
+  /* dimensions */
+  border-radius: 5px 5px 0 0;
+  /* background */
+  background-image: linear-gradient(180deg, rgba(70, 66, 72, 0.463) 0%, rgba(59, 56, 61, 0.435) 100%);
+  /* flex */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* span des boutons MacOS */
+.boutons, .reseaux-sociaux {
+  /* dimensions */
+  width: 61px;
+  /* flex */
+  display: inline-flex;
+  justify-content: space-between;
+}
+.boutons {
+  margin-left: 7px;
+}
+.reseaux-sociaux {
+  margin-right: 7px;
+}
+/* boutons MacOS*/
+.rond {
+  /* dimensions */
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}
+.fermer {
+  background-color: #ff5952;
+}
+.reduire {
+  background-color: #e6c02a;
+}
+.agrandir {
+  background-color: #54c12c;
+}
+.reseaux-sociaux img {
+  height: 15px;
+}
+
+
+/* paramètrages de l'interieur du terminal */
+.terminal-fenetre {
+  /* dimmensions */
+  padding: 0 .5em;
+  /* flex */
+  display: flex;
+  flex-direction: column;
+  /* scroll */
+  overflow-y:scroll;
+}
+/* Barre de scroll pour Webkit */
+.terminal-fenetre::-webkit-scrollbar {
+  width: 1%;
+}
+.terminal-fenetre::-webkit-scrollbar-thumb {
+  background: rgba(59, 56, 61, 0.435);
+}
+/* Barre de scroll pour les autres navigateurs */
+.terminal-fenetre {
+  scrollbar-color: rgba(59, 56, 61, 0.435) rgba(255, 255, 255, 0);
+  scrollbar-width: thin;
+}
+
+
+
+.terminal-insert {
+  padding: 0 .5em;
+  display: flex;
+}
+form > .terminal-insert{
+  padding: 0;
+}
+.profil {
+  color: #00be44;
+}
+.repertoire {
+  color: #316af5;
+  font-weight: 500;
+  margin: 0 0.5em;
+}
+.code {
+  color: rgb(255, 255, 255);
+}
+.formations-align {
+  padding-left: 8.375em;
+}
+.diplomes-align {
+  padding-left: 4.1875em;
+}
+
+

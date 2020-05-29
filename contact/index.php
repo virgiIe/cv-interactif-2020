@@ -1,68 +1,67 @@
-<!DOCTYPE html>
-<html lang="fr" >
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>virgile.men — cv interactif</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>virgile.men — contact</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/terminal.css">
+    <link rel="stylesheet" href="../assets/css/keyboard.css">
 
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/css/terminal.css">
-  <link rel="stylesheet" href="./assets/css/keyboard.css">
-
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  
-  <script type="text/javascript" src="./assets/js/commandes.js"></script>
-  <script type="text/javascript" src="./assets/js/script.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script  src="../assets/js/script.js"></script>
 </head>
 <body>
 <div class="container">
 
-
-  <div class="partie-terminal">
-
+<div class="partie-terminal">
     <!-- Entete de la fenêtre du terminal -->
     <div class="terminal-barre">
         <span class="boutons">
-          <span class="rond fermer"></span>
-          <span class="rond reduire"></span>
-          <span class="rond agrandir"></span>
+        <span class="rond fermer"></span>
+        <span class="rond reduire"></span>
+        <span class="rond agrandir"></span>
         </span>
-        <h1>virgile.men － cv</h1>
-        <span class="reseaux-sociaux">
-          <a href="https://www.linkedin.com/in/virgile-men"><img src="./assets/img/linkedin.png" alt="logo du réseau social Linkedin"></a>
-          <a href="https://github.com/virgile-men"><img src="./assets/img/github.png" alt="logo du service web Github"></a>
-          <a href="https://www.behance.net/virgile-men"><img src="./assets/img/behance.png" alt="logo du réseau social Behance"></a>
-        </span>
+        <h1>virgile.men － contact</h1>
     </div>
     <!-- Intérieur de la fenêtre du terminal -->
-    <div class="terminal-fenetre">
+    <div class="terminal-fenetre formulaire">
+
+        <!-- Message de success -->
+        <?php if (isset($_GET['success'])): ?>
+        <div class="" role="alert">
+            Message bien envoyé!
+        </div>
+        <?php endif; ?>
+
         <!-- Première ligne -->
         <div class="terminal-line">
-          <p>Bienvenue dans le cv interactif de virgile.men — Tapez et entrez <span class="code">aide</span>
-            pour avoir la liste des commandes.</p>
+            <p>Un projet ? Une recommandation ? Vous pouvez me contacter par ce formulaire, je serai ravie de vous répondre !</p>
         </div>
-        <!-- Historique de commande (voir script.js) -->
+    
+        <!-- Formulaire -->
+        <form action="controllers/contact_form.php" method="POST">
+            <div class="terminal-insert">
+                <label for="first_name" class="profil">Nom complet ou société<span class="repertoire">~</span></label>
+                <input required type="text" name="full_name_or_company" placeholder="___ ___">
+            </div>
+            <div class="terminal-insert">
+                <label for="email" class="profil">email<span class="repertoire">~</span></label>
+                <input required type="email" id="email" name="email" placeholder="_@_">
+            </div>
+            <textarea required name="comment" rows="1" placeholder="Votre message"></textarea>
+
+            <button type="submit">> Envoyer</button>
+        </form>
+
+
     </div>
-
-      <!-- Ligne d'entrée de commande -->
-      <div class="terminal-insert">
-          <label class="profil">virgile.men<span class="repertoire">~</span></label>
-          <input type="text" id="insertCommande" autofocus>
-      </div>
+</div>
 
 
 
-
-      
-  </div>
-
-
-
-
-
-  <div class="partie-keyboard">
+<div class="partie-keyboard">
     <div class='kb-row'>
       <div class='k k-tld' id='kc-192' pre='#' suf='@'></div>
       <div class='k k-1' id='kc-49' pre='1' suf='&amp;'></div>
@@ -142,6 +141,7 @@
       <div class='k k-rarr' id='kc-39' pre='▸'></div>
     </div>
   </div>
+
 
 </div>
 </body>

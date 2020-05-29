@@ -1,4 +1,8 @@
 /*GENERALITES*/
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+
 html, body {
   /* dimensions */
   height: 100vh;
@@ -45,6 +49,7 @@ input {
   width: 55%;
   border: none;
   background: none;
+  outline: none;
   /* caractères */
   color: white;
   font-size: 1em;
@@ -132,9 +137,7 @@ button {
       height: 70vh !important;
   }
   .partie-keyboard {
-    visibility: hidden;
-    height: 0;
-    width: 0 !important;
+    display: none;
   }
 }
 /* hauteur inférieur à 600px */
@@ -143,8 +146,6 @@ button {
       height: 80vh !important;
   }
   .partie-keyboard {
-    visibility: hidden;
-    height: 0;
-    width: 0 !important;
+    display: none;
   }
 }

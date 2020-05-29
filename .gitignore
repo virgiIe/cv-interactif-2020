@@ -1,7 +1,6 @@
-commandes.html
-bin-folder
-contact
-assets/js/commandes.json
+contact/lib/secrets.php
+contact/lib/mail.php
 
 .DS_Store
 .vscode
+draft-folder
