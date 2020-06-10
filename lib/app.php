@@ -1,7 +1,4 @@
 <?php
-  // recevoir par mail le formulaire de contact --> demander à Yohan
-  include('mail.php');
-
   // All constants with credentials should be defined in secrets.php
   include('secrets.php');
 

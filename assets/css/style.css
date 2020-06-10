@@ -16,9 +16,6 @@ html, body {
   font-family: 'Roboto Mono', monospace;
 }
 /* SCROLL */
-body { /* pas de scroll du body (puisque le scroll est nécessaire que pour nav et main */
-  overflow: hidden;
-}
 /* Cacher la barre de défilement pour Chrome, Safari et Opera */
 body::-webkit-scrollbar {
  display: none;
@@ -122,30 +119,4 @@ button {
 	100% {
 		background-position: 0% 50%;
 	}
-}
-
-/* @MEDIA */
-/* largeur supérieur à 1000px */
-@media screen and (min-width: 1000px) {
-  .partie-terminal {
-      width: 800px !important;
-  }
-}
-/* largeur inférieur à 740px */
-@media screen and (max-width: 740px) {
-  .partie-terminal {
-      height: 70vh !important;
-  }
-  .partie-keyboard {
-    display: none;
-  }
-}
-/* hauteur inférieur à 600px */
-@media screen and (max-height: 600px) {
-  .partie-terminal {
-      height: 80vh !important;
-  }
-  .partie-keyboard {
-    display: none;
-  }
 }

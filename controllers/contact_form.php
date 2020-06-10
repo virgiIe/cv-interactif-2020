@@ -6,7 +6,7 @@
     $db = getDatabase();
 
     // Our SQL query, values will be replaced later
-    $sql = "INSERT INTO contact (full_name_or_company, email, comment) VALUES (:full_name_or_company, :email, :comment)";
+    $sql = "INSERT INTO cv_Contact (full_name_or_company, email, comment) VALUES (:full_name_or_company, :email, :comment)";
 
     // Mapped attributes based on sql query values and form input values
     $attributes = array(
@@ -25,7 +25,7 @@
     $db = null;
 
     // Redirect to index with a success message
-    header('Location: ../index.php?success=true');
+    header('Location: ../contact/index.php?success=true');
   } else {
     http_response_code(500);
   }

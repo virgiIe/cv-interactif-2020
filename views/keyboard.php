@@ -1,68 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr" >
-<head>
-  <meta charset="UTF-8">
-  <title>virgile.men — cv interactif</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/css/terminal.css">
-  <link rel="stylesheet" href="./assets/css/keyboard.css">
-
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  
-  <script type="text/javascript" src="./assets/js/commandes.js"></script>
-  <script type="text/javascript" src="./assets/js/script.js"></script>
-
-</head>
-<body>
-<div class="container">
-
-
-  <div class="partie-terminal">
-
-    <!-- Entete de la fenêtre du terminal -->
-    <div class="terminal-barre">
-        <span class="boutons">
-          <span class="rond fermer"></span>
-          <span class="rond reduire"></span>
-          <span class="rond agrandir"></span>
-        </span>
-        <h1>virgile.men － cv</h1>
-        <span class="reseaux-sociaux">
-          <a href="https://www.linkedin.com/in/virgile-men"><img src="./assets/img/linkedin.png" alt="logo du réseau social Linkedin"></a>
-          <a href="https://github.com/virgile-men"><img src="./assets/img/github.png" alt="logo du service web Github"></a>
-          <a href="https://www.behance.net/virgile-men"><img src="./assets/img/behance.png" alt="logo du réseau social Behance"></a>
-        </span>
-    </div>
-    <!-- Intérieur de la fenêtre du terminal -->
-    <div class="terminal-fenetre">
-        <!-- Première ligne -->
-        <div class="terminal-line">
-          <p>Bienvenue dans le cv interactif de virgile.men — Tapez et entrez <span class="code">aide</span>
-            pour avoir la liste des commandes.</p>
-        </div>
-        <!-- Historique de commande (voir script.js) -->
-    </div>
-
-      <!-- Ligne d'entrée de commande -->
-      <div class="terminal-insert">
-          <label class="profil">virgile.men<span class="repertoire">~</span></label>
-          <input type="text" id="insertCommande" autofocus>
-      </div>
-
-
-
-
-      
-  </div>
-
-
-
-
-
-  <div class="partie-keyboard">
+<div class="partie-keyboard">
     <div class='kb-row'>
       <div class='k k-tld' id='kc-192' pre='#' suf='@'></div>
       <div class='k k-1' id='kc-49' pre='1' suf='&amp;'></div>
@@ -128,7 +64,7 @@
     </div>
     <div class='kb-row'>
       <div class='k k-func k-txt' suf='fn'></div>
-      <div class='k k-ctrl k-txt' id='kc-17'  pre='^'suf='control'></div>
+      <div class='k k-ctrl k-txt' id='kc-17'  pre='^' suf='control'></div>
       <div class='k k-lopt k-txt' id='kc-18L' pre='alt' suf='option'></div>
       <div class='k k-lcmnd k-txt' id='kc-91L' pre='⌘' suf='command'></div>
       <div class='k k-space' id='kc-32'></div>
@@ -142,7 +78,3 @@
       <div class='k k-rarr' id='kc-39' pre='▸'></div>
     </div>
   </div>
-
-</div>
-</body>
-</html>

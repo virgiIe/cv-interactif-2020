@@ -20,20 +20,21 @@ $(document).ready(function() {
 
     if (keyCode === 13) {
       if (saisie = commandes[saisie]) {
-        var bon = $("#insertCommande").val();
-        $(".terminal-fenetre").append(`<div class="terminal-commande"><span class="profil">virgile.men</span><span class="repertoire">~</span><span class="user-input" id="userInput"></span><span class="code">`+bon+`</div></span><div class="terminal-line">`+saisie+`</div>`);
+        var saisieValide = $("#insertCommande").val();
+        $(".terminal-fenetre").append(`<div class="terminal-commande"><span class="profil">virgile.men</span><span class="repertoire">~</span><span class="user-input" id="userInput"></span><span class="code">`+saisieValide+`</div></span><div class="terminal-line">`+saisie+`</div>`);
 
       } else {
-        var erreur = $("#insertCommande").val();
-        $(".terminal-fenetre").append(`<div class="terminal-commande"><span class="profil">virgile.men</span><span class="repertoire">~</span><span class="user-input" id="userInput"></span><span class="code">`+erreur+`</div></span></div><div class="terminal-line"><p>aucune commande associée à <span class="code">`+erreur+`</span></p></div>`);
+        var saisieErreur = $("#insertCommande").val();
+        $(".terminal-fenetre").append(`<div class="terminal-commande"><span class="profil">virgile.men</span><span class="repertoire">~</span><span class="user-input" id="userInput"></span><span class="code">`+saisieErreur+`</div></span></div><div class="terminal-line"><p>aucune commande associée à <span class="code">`+saisieErreur+`</span></p></div>`);
       }
       $("#insertCommande").val(""); // réinialisation de l'intérieur de l'input
 
       // Scroll automatique jusqu'au bout de la commande entrée
       var scrollValue = document.querySelector('.terminal-fenetre').scrollHeight;
       $(".terminal-fenetre").animate({ scrollTop: scrollValue }, 1000);
+    };
 
-    }
+
   });
 
 

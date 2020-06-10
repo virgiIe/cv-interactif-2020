@@ -1,0 +1,25 @@
+/* @MEDIA */
+/* largeur supérieur à 1000px */
+@media screen and (min-width: 1000px) {
+    .partie-terminal {
+        width: 800px;
+    }
+  }
+  /* largeur inférieur à 740px */
+  @media screen and (max-width: 740px) {
+    .partie-terminal {
+        height: 70vh;
+    }
+    .partie-keyboard {
+      display: none;
+    }
+  }
+  /* hauteur inférieur à 600px */
+  @media screen and (max-height: 600px) {
+    .partie-terminal {
+        height: 80vh;
+    }
+    .partie-keyboard {
+      display: none;
+    }
+  }

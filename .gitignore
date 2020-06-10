@@ -1,5 +1,4 @@
-contact/lib/secrets.php
-contact/lib/mail.php
+lib/secrets.php
 
 .DS_Store
 .vscode
